@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        do {
+            var NFPersons = prompt("How many persons do you have ?");
+        } while (isNaN(NFPersons) || NFPersons == "");
+
+        for (i = 0; i < NFPersons; i++) {
+            do {
+                var personname = prompt("Person " + (i + 1) + " Name with min 3 char and not a number")
+            } while (personname.length < 3 || !isNaN(personname));
+
+            do {
+                var personage = prompt("Person " + (i + 1) + " Age must be between 10-99");
+            } while (isNaN(personage) || personage == "" || personage > 99 || personage < 10);
+
+            do {
+                var personmail = prompt("Person " + (i + 1) + " Email must be valid");
+                var re =
+                    /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            } while (!re.test(personmail) || personmail == "");
+
+            do {
+                var password = prompt("Person " + (i + 1) + " Password");
+                var passwordConfirm = prompt("Person " + (i + 1) + "Confirm Password")
+            } while (password !== passwordConfirm || password == "" || passwordConfirm == "");
+
+            do {
+                var bD = prompt("Person " + (i + 1) +
+                    " Date Of Birth on mm/dd/yyyy or Mar 25 2015 or 25 mar 2015 and valid with your age");
+            } while (bD != personage);
+        }
+    </script>
+
+</body>
+
+</html>
