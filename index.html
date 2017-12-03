@@ -37,7 +37,17 @@
             do {
                 var bD = prompt("Person " + (i + 1) +
                     " Date Of Birth on mm/dd/yyyy or Mar 25 2015 or 25 mar 2015 and valid with your age");
-            } while (bD != personage);
+                var pattern = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+
+            } while ((2017 - bD) != personage );
+
+            var gender = confirm("Are you male ?");
+            if (gender == true) {
+                var pGender = "male";
+            } else {
+                var pGender = "female";
+            }
+
         }
     </script>
 
